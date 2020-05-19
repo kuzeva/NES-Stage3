@@ -14,7 +14,7 @@ import java.net.URL;
 
 public class getJSON {
 
-    public static final String Url = "http://10.0.2.2:5000/getjobs";
+    public static final String Url = "http://10.0.2.2:5000/getjobs/emulator";
 
     public static String getBackendJson(){
         String json = null;

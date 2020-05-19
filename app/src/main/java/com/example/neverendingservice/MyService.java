@@ -91,8 +91,8 @@ public class MyService extends Service {
     public void taskDelayLoop(){
         while(true){
 
-            new NetworkPING().execute();
-            Log.i("MAKE_PING","vleguva vo doInBackground");
+            new NetworkPING(getApplicationContext()).execute();
+            Log.i("MAKE_PING","doInBackground() starts");
             try{
                 Thread.sleep(INTERVAL);
             } catch (InterruptedException e) {
@@ -148,7 +148,7 @@ public class MyService extends Service {
         //Log.d(TAG,"Service destroyed");
 
         try {
-            SharedPreferences prefs= getSharedPreferences("uk.ac.shef.oak.ServiceRunning", MODE_PRIVATE);
+            SharedPreferences prefs= getSharedPreferences("com.example.neverendingservice.ActiveServiceRunning", MODE_PRIVATE);
             SharedPreferences.Editor editor = prefs.edit();
             editor.putInt("timeCounter", timeCounter);
             editor.apply();
